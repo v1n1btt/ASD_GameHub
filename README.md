@@ -6,7 +6,7 @@ Plataforma Android com jogos educativos voltados para crianças com Transtorno d
 
 ## Pré-requisitos
 
-- Python 3.14 (recomendado)
+- Python 3.13 (recomendado)
 - Kivy 2.3.1
 - Buildozer
 
@@ -42,8 +42,8 @@ Recomenda-se utilizar um ambiente virtual para evitar conflitos entre dependênc
 
 ```bash
 sudo apt update
-sudo apt install python3.14-venv
-python3.14 -m venv venv_p4a_develop
+sudo apt install python3.13-venv
+python3.13 -m venv venv_p4a_develop
 source venv_p4a_develop/bin/activate
 ```
 
