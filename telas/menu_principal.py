@@ -50,10 +50,10 @@ class TelaMenuPrincipal(Screen):
             size_hint=(1, 0.24),
         )
         cartao2 = BotaoJogo(
-            "jogo 2",
-            "nome tela game 2",
+            "Jogo da Memória",
+            "Identifique as emoções em cada situação",
             COR_OK,
-            "jogo2",
+            "menu_memoria",
             size_hint=(1, 0.24),
         )
         cartao3 = BotaoJogo(
