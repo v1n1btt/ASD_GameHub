@@ -7,7 +7,7 @@ from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
-from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_TEXTO, COR_IDEAL
+from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_TEXTO, COR_IDEAL, COR_OK
 from widgets_util import cartao_arredondado, fundo_de_tela
 
 
@@ -58,10 +58,23 @@ class TelaFim(Screen):
         cartao_arredondado(botao_de_novo,COR_IDEAL)
         botao_de_novo.bind(on_release=self.jogar_novamente)
 
+        botao_voltar = Button(
+            text="Voltar ao menu de jogos",
+            font_size="14sp",
+            bold=True,
+            color=(1, 1, 1, 1),
+            background_normal="",
+            background_color=(0, 0, 0, 0),
+            size_hint=(1, 0.14),
+        )
+        cartao_arredondado(botao_voltar, COR_OK)
+        botao_voltar.bind(on_release=self.voltar_ao_menu_principal)
+
         caixa.add_widget(self.avatar)
         caixa.add_widget(self.titulo)
         caixa.add_widget(self.resultado)
         caixa.add_widget(botao_de_novo)
+        caixa.add_widget(botao_voltar)
         raiz.add_widget(caixa)
         self.add_widget(raiz)
 
@@ -70,8 +83,12 @@ class TelaFim(Screen):
         self.avatar.source = app.personagem["imagem"]
         self.titulo.text = f"{app.personagem['nome']} concluiu todas as situações!"
         self.resultado.text = (
-            f"Você fez {app.pontuacao_ideal} de 15 escolhas ideais.\nCada tentativa é um aprendizado!"
+            f"Você fez {app.pontuacao_ideal} de {len(app.cenarios_da_partida)} escolhas ideais.\nCada tentativa é um aprendizado!"
         )
 
     def jogar_novamente(self, *args):
         self.manager.current = "selecao"
+
+    def voltar_ao_menu_principal(self, *args):
+        self.manager.current = "menu_principal"
+        
