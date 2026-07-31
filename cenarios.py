@@ -13,7 +13,7 @@ Não existe "errado"/punição agressiva: toda escolha recebe uma
 explicação clara do porquê, e a reação do colega é sempre mostrada de
 forma gentil (mesmo quando é uma reação menos positiva).
 """
-
+ 
 CENARIOS=[
     {
         "id":1,
@@ -418,6 +418,141 @@ CENARIOS=[
                 "feedback":"Ótima atitude! Contar para um adulto quando alguém está sendo excluído ajuda a resolver a situação",
                 "reacao":"neutro",
                 "reacao_texto":"A professora conversou com o grupo com calma",
+            },
+        ],
+    },
+    {
+        "id":16,
+        "situacao":"Um aluno novo chegou na turma hoje e está sentado sozinho, sem conhecer ninguém.\nO que você faz?",
+        "escolhas":[
+            {
+                "texto":"Me aproximo, me apresento e mostro onde ficam as coisas",
+                "nivel":"ideal",
+                "feedback":"Muito bem! Ajudar quem é novo a se sentir bem-vindo faz toda a diferença no primeiro dia",
+                "reacao":"feliz",
+                "reacao_texto":"O novo colega ficou aliviado e feliz com a recepção",
+            },
+            {
+                "texto":"Fico na minha, esperando ele(a) se aproximar primeiro",
+                "nivel":"ok",
+                "feedback":"É normal sentir um pouco de timidez! Mas dar o primeiro passo costuma deixar quem chega bem menos sozinho",
+                "reacao":"pensativo",
+                "reacao_texto":"O novo colega ficou observando a turma, sem saber com quem falar",
+            },
+            {
+                "texto":"Aceno com um sorriso, mas continuo minha atividade",
+                "nivel":"ok",
+                "feedback":"Um sorriso já ajuda bastante! Se quiser, ir além e puxar conversa deixa a pessoa ainda mais à vontade",
+                "reacao":"neutro",
+                "reacao_texto":"O novo colega sorriu de volta, mas continuou sozinho",
+            },
+        ],
+    },
+    {
+        "id":17,
+        "situacao":"Você está contando algo importante para um colega, mas ele(a) começa a falar de outra coisa no meio.\nO que você faz?",
+        "escolhas":[
+            {
+                "texto":"Espero terminar e depois digo, com calma, que ainda não tinha acabado",
+                "nivel":"ideal",
+                "feedback":"Muito bem! Avisar com gentileza que ainda queria terminar de falar é uma forma respeitosa de se expressar",
+                "reacao":"pensativo",
+                "reacao_texto":"Seu colega entendeu e pediu desculpas por interromper",
+            },
+            {
+                "texto":"Paro de falar e desisto de continuar a história",
+                "nivel":"ok",
+                "feedback":"Tudo bem se preferir deixar pra depois! Mas você também tem o direito de terminar o que estava contando",
+                "reacao":"neutro",
+                "reacao_texto":"Seu colega nem percebeu que a conversa tinha ficado pela metade",
+            },
+            {
+                "texto":"Fico bravo(a) e falo mais alto pra continuar",
+                "nivel":"ok",
+                "feedback":"É chato ser interrompido(a)! Mas falar com calma costuma resolver melhor do que competir por quem fala mais alto",
+                "reacao":"assustado",
+                "reacao_texto":"Seu colega se assustou com a reação mais brava",
+            },
+        ],
+    },
+    {
+        "id":18,
+        "situacao":"Um colega começa a te chamar por um apelido que você não gosta.\nO que você faz?",
+        "escolhas":[
+            {
+                "texto":"Digo com calma que não gosto do apelido e peço para me chamar pelo nome",
+                "nivel":"ideal",
+                "feedback":"Isso mesmo! Falar com clareza e educação sobre o que incomoda é a melhor forma de resolver",
+                "reacao":"pensativo",
+                "reacao_texto":"Seu colega entendeu e parou de usar o apelido",
+            },
+            {
+                "texto":"Fico quieto(a), mesmo não gostando",
+                "nivel":"ok",
+                "feedback":"É comum não saber como reagir na hora! Mas avisar o que incomoda ajuda a situação não se repetir",
+                "reacao":"triste",
+                "reacao_texto":"Seu colega continuou usando o apelido sem saber que incomodava",
+            },
+            {
+                "texto":"Uso um apelido que sei que ele(a) também não gosta, para revidar",
+                "nivel":"ok",
+                "feedback":"Entendo a vontade de responder à altura! Mas conversar diretamente sobre o problema costuma resolver melhor do que revidar",
+                "reacao":"bravo",
+                "reacao_texto":"Seu colega ficou incomodado(a) e a situação esquentou",
+            },
+        ],
+    },
+    {
+        "id":19,
+        "situacao":"No trabalho em grupo, você e um colega têm ideias diferentes sobre como fazer a atividade.\nO que você faz?",
+        "escolhas":[
+            {
+                "texto":"Explico minha ideia, escuto a dele(a) e buscamos um meio-termo",
+                "nivel":"ideal",
+                "feedback":"Muito bem! Buscar um meio-termo mostra respeito pelas duas ideias e ajuda o grupo a avançar",
+                "reacao":"pensativo",
+                "reacao_texto":"Vocês dois chegaram a uma ideia combinada",
+            },
+            {
+                "texto":"Insisto que minha ideia é a certa e sigo do meu jeito",
+                "nivel":"ok",
+                "feedback":"Ter confiança na sua ideia é ótimo! Mas ouvir o colega também ajuda o trabalho a ficar ainda melhor",
+                "reacao":"bravo",
+                "reacao_texto":"Seu colega ficou incomodado(a) por não ser ouvido(a)",
+            },
+            {
+                "texto":"Desisto da minha ideia e sigo só a dele(a), sem dizer nada",
+                "nivel":"ok",
+                "feedback":"Ceder às vezes é generoso! Mas compartilhar sua opinião também enriquece o trabalho do grupo",
+                "reacao":"neutro",
+                "reacao_texto":"Seu colega nem soube que você também tinha uma ideia",
+            },
+        ],
+    },
+    {
+        "id":20,
+        "situacao":"Um colega te ajudou com uma atividade, mas você esqueceu de agradecer na hora e já foi embora.\nO que você faz?",
+        "escolhas":[
+            {
+                "texto":"Volto e agradeço assim que lembro",
+                "nivel":"ideal",
+                "feedback":"Muito bem! Agradecer, mesmo um pouco depois, mostra que você valorizou a ajuda",
+                "reacao":"feliz",
+                "reacao_texto":"Seu colega ficou feliz ao ouvir o agradecimento",
+            },
+            {
+                "texto":"Deixo pra agradecer outro dia, quando lembrar",
+                "nivel":"ok",
+                "feedback":"Tudo bem esquecer às vezes! Mas agradecer o quanto antes deixa a pessoa mais segura de que a ajuda foi notada",
+                "reacao":"neutro",
+                "reacao_texto":"Seu colega ficou na dúvida se você tinha gostado da ajuda",
+            },
+            {
+                "texto":"Não agradeço, achando que não é tão importante",
+                "nivel":"ok",
+                "feedback":"É fácil não perceber a importância disso! Mas um simples \"obrigado(a)\" fortalece bastante a amizade",
+                "reacao":"triste",
+                "reacao_texto":"Seu colega ficou um pouco desanimado(a) por não ouvir um agradecimento",
             },
         ],
     }

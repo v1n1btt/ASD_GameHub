@@ -6,13 +6,16 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, FadeTransition
 from kivy.utils import platform
 
-from cenarios import PERSONAGENS
+from cenarios import CENARIOS, PERSONAGENS, REACOES_IMG
 from telas.menu_principal import TelaMenuPrincipal
 from telas.menu import TelaMenu
 from telas.selecao import TelaSelecao
 from telas.cenario import TelaCenario
 from telas.fim import TelaFim
 from telas.outro_jogo import TelaOUTROGAME
+import random
+
+QUANTIDADE_CENARIOS_POR_PARTIDA = 10
 
 #FORMATO DA TELA REDIMENSIONADO CORRETAMENTE
 if platform not in ("android","ios"):
@@ -50,6 +53,8 @@ class LeituraSocialApp(App):
     def reiniciar_jogo(self):
         self.indice_cenario=0
         self.pontuacao_ideal=0
+        self.cenarios_da_partida = random.sample(CENARIOS,min(QUANTIDADE_CENARIOS_POR_PARTIDA,len(CENARIOS))) #isso aleatoriza os cenários levados ao user
+
 
 
 if __name__ == "__main__":
