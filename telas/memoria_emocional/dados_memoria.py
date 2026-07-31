@@ -15,75 +15,51 @@ Estrutura de cada par:
 VERSO_IMGPATH = "assets/memoria/verso.jpg"
 PARES = [
     {
-        "id": "par01",
-        "lado_a": "assets/memoria/par01a.jpg",
-        "lado_b": "assets/memoria/par01b.png",
-        "nome": "Exemplo 1"
+        "id": "par_alegre",
+        "lado_a": "assets/memoria/alegre.jpg",
+        "lado_b": "assets/memoria/alegre_t.jpg",
+        "nome": "Alegre"
     },
     {
-        "id": "par02",
-        "lado_a": "assets/memoria/par02a.png",
-        "lado_b": "assets/memoria/par02b.png",
-        "nome": "Exemplo 2"
+        "id": "par_bravo",
+        "lado_a": "assets/memoria/bravo.jpg",
+        "lado_b": "assets/memoria/bravo_t.jpg",
+        "nome": "Bravo"
     },
     {
-        "id": "par03",
-        "lado_a": "assets/memoria/par03a.png",
-        "lado_b": "assets/memoria/par03b.png",
-        "nome": "Exemplo 3"
+        "id": "par_cansado",
+        "lado_a": "assets/memoria/cansado.jpg",
+        "lado_b": "assets/memoria/cansado_t.jpg",
+        "nome": "Cansado"
     },
     {
-        "id": "par04",
-        "lado_a": "assets/memoria/par04a.png",
-        "lado_b": "assets/memoria/par04b.png",
-        "nome": "Exemplo 4"
+        "id": "par_confuso",
+        "lado_a": "assets/memoria/confuso.jpg",
+        "lado_b": "assets/memoria/confuso_t.jpg",
+        "nome": "Confuso"
     },
     {
-        "id": "par05",
-        "lado_a": "assets/memoria/par05a.png",
-        "lado_b": "assets/memoria/par05b.png",
-        "nome": "Exemplo 5"
+        "id": "par_feliz",
+        "lado_a": "assets/memoria/feliz.jpg",
+        "lado_b": "assets/memoria/feliz_t.jpg",
+        "nome": "Feliz"
     },
     {
-        "id": "par06",
-        "lado_a": "assets/memoria/par06a.png",
-        "lado_b": "assets/memoria/par06b.png",
-        "nome": "Exemplo 6"
+        "id": "par_pensativo",
+        "lado_a": "assets/memoria/pensativo.jpg",
+        "lado_b": "assets/memoria/pensativo_t.jpg",
+        "nome": "Pensativo"
     },
     {
-        "id": "par07",
-        "lado_a": "assets/memoria/par07a.png",
-        "lado_b": "assets/memoria/par07b.png",
-        "nome": "Exemplo 7"
+        "id": "par_surpreso",
+        "lado_a": "assets/memoria/surpreso.jpg",
+        "lado_b": "assets/memoria/surpreso_t.jpg",
+        "nome": "Surpreso"
     },
     {
-        "id": "par08",
-        "lado_a": "assets/memoria/par08a.png",
-        "lado_b": "assets/memoria/par08b.png",
-        "nome": "Exemplo 8"
-    },
-    {
-        "id": "par09",
-        "lado_a": "assets/memoria/par09a.png",
-        "lado_b": "assets/memoria/par09b.png",
-        "nome": "Exemplo 9"
-    },
-    {
-        "id": "par10",
-        "lado_a": "assets/memoria/par10a.png",
-        "lado_b": "assets/memoria/par10b.png",
-        "nome": "Exemplo 10"
-    },
-    {
-        "id": "par11",
-        "lado_a": "assets/memoria/par11a.png",
-        "lado_b": "assets/memoria/par11b.png",
-        "nome": "Exemplo 11"
-    },
-    {
-        "id": "par12",
-        "lado_a": "assets/memoria/par12a.png",
-        "lado_b": "assets/memoria/par12b.png",
-        "nome": "Exemplo 12"
+        "id": "par_triste",
+        "lado_a": "assets/memoria/triste.jpg",
+        "lado_b": "assets/memoria/triste_t.jpg",
+        "nome": "Triste"
     }
 ]
