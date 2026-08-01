@@ -80,10 +80,11 @@ class TelaFim(Screen):
 
     def on_pre_enter(self, *args):
         app = App.get_running_app()
+        selecao = self.manager.get_screen("selecao")
         self.avatar.source = app.personagem["imagem"]
         self.titulo.text = f"{app.personagem['nome']} concluiu todas as situações!"
         self.resultado.text = (
-            f"Você fez {app.pontuacao_ideal} de {len(app.cenarios_da_partida)} escolhas ideais.\nCada tentativa é um aprendizado!"
+            f"Você fez {selecao.pontuacao_ideal} de {len(selecao.cenarios_da_partida)} escolhas ideais.\nCada tentativa é um aprendizado!"
         )
 
     def jogar_novamente(self, *args):

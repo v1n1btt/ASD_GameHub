@@ -121,9 +121,10 @@ class TelaCenario(Screen):
 
     def carregar_cenario(self):
         app = App.get_running_app()
-        cenario = app.cenarios_da_partida[app.indice_cenario]
+        selecao = self.manager.get_screen("selecao")
+        cenario = selecao.cenarios_da_partida[selecao.indice_cenario]
 
-        self.rotulo_progresso.text = f"Situação {app.indice_cenario + 1} de {len(app.cenarios_da_partida)}"
+        self.rotulo_progresso.text = f"Situação {selecao.indice_cenario + 1} de {len(selecao.cenarios_da_partida)}"
         self.texto_situacao.text = cenario["situacao"]
         self.avatar_pequeno.source = app.personagem["imagem"]
 
@@ -150,9 +151,9 @@ class TelaCenario(Screen):
             self.caixa_opcoes.add_widget(botao)
 
     def escolher(self, escolha): #AQUI ESTÃO OS NÍVEIS DAS ESCOLHAS - errado e certo estão, obviamente, ocultos do user, isso pq o intuito do jogo é não pressionar ele por ter resultados "corretos", mas sim mostrar que há outras formas de reagir que podem ser melhores
-        app = App.get_running_app()
+        selecao = self.manager.get_screen("selecao")
         if escolha["nivel"]=="ideal":
-            app.pontuacao_ideal += 1
+            selecao.pontuacao_ideal += 1
             prefixo="Ótima escolha!\n"
         else:
             prefixo="Boa tentativa!\n"
@@ -169,9 +170,9 @@ class TelaCenario(Screen):
         self.cartao_feedback.pos_hint = {"center_x": 0.5, "y": 0.06}
 
     def proximo_cenario(self, *args):
-        app = App.get_running_app()
-        app.indice_cenario += 1
-        if app.indice_cenario >= len(app.cenarios_da_partida):
+        selecao = self.manager.get_screen("selecao")
+        selecao.indice_cenario += 1
+        if selecao.indice_cenario >= len(selecao.cenarios_da_partida):
             self.manager.current="fim"
         else:
             self.carregar_cenario()
