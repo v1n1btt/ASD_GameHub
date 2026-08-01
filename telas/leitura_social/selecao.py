@@ -8,7 +8,7 @@ from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
 from telas.leitura_social.cenarios import PERSONAGENS
-from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_IDEAL
+from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_IDEAL, COR_OK
 from widgets_util import cartao_arredondado, fundo_de_tela
 from componentes import BotaoPersonagem
 
@@ -38,7 +38,7 @@ class TelaSelecao(Screen):
             size_hint=(1, 0.10),
         )
 
-        grade = GridLayout(cols=3, spacing=dp(10), size_hint=(1, 0.70))
+        grade = GridLayout(cols=3, spacing=dp(10), size_hint=(1, 0.62))
         for personagem in PERSONAGENS:
             cartao = BotaoPersonagem(personagem, self)
             self.cartoes.append(cartao)
@@ -58,9 +58,22 @@ class TelaSelecao(Screen):
         cartao_arredondado(self.botao_confirmar, COR_IDEAL)
         self.botao_confirmar.bind(on_release=self.confirmar)
 
+        botao_voltar = Button(
+            text="Voltar ao menu de jogos",
+            font_size="13sp",
+            bold=True,
+            color=(1, 1, 1, 1),
+            background_normal="",
+            background_color=(0, 0, 0, 0),
+            size_hint=(1, 0.08),
+        )
+        cartao_arredondado(botao_voltar, COR_OK)
+        botao_voltar.bind(on_release=self.voltar_ao_menu_principal)
+
         painel.add_widget(titulo)
         painel.add_widget(grade)
         painel.add_widget(self.botao_confirmar)
+        painel.add_widget(botao_voltar)
         raiz.add_widget(painel)
         self.add_widget(raiz)
 
@@ -76,3 +89,6 @@ class TelaSelecao(Screen):
         app = App.get_running_app()
         app.reiniciar_jogo()
         self.manager.current = "cenario"
+
+    def voltar_ao_menu_principal(self, *args):
+        self.manager.current = "menu_principal"

@@ -11,7 +11,6 @@ from cores import COR_BOTAO, COR_DESTAQUE, COR_FUNDO_CARTAO, COR_TEXTO
 from telas.leitura_social.cenarios import CENARIOS, REACOES_IMG
 from widgets_util import cartao_arredondado, fundo_de_tela, recolorir_cartao
 
-
 class TelaCenario(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -122,9 +121,9 @@ class TelaCenario(Screen):
 
     def carregar_cenario(self):
         app = App.get_running_app()
-        cenario = CENARIOS[app.indice_cenario]
+        cenario = app.cenarios_da_partida[app.indice_cenario]
 
-        self.rotulo_progresso.text = f"Situação {app.indice_cenario + 1} de {len(CENARIOS)}"
+        self.rotulo_progresso.text = f"Situação {app.indice_cenario + 1} de {len(app.cenarios_da_partida)}"
         self.texto_situacao.text = cenario["situacao"]
         self.avatar_pequeno.source = app.personagem["imagem"]
 
@@ -172,7 +171,7 @@ class TelaCenario(Screen):
     def proximo_cenario(self, *args):
         app = App.get_running_app()
         app.indice_cenario += 1
-        if app.indice_cenario >= len(CENARIOS):
+        if app.indice_cenario >= len(app.cenarios_da_partida):
             self.manager.current="fim"
         else:
             self.carregar_cenario()
