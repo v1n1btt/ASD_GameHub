@@ -1,7 +1,7 @@
 [app]
-title = Leitura Social
-package.name = leiturasocial
-package.domain = org.leiturasocial
+title = TEA GameHub
+package.name = teagamehub
+package.domain = org.teagamehub
 
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas

@@ -26,7 +26,7 @@ if platform not in ("android","ios"):
 
 class LeituraSocialApp(App):
     def build(self):
-        self.title="Leitura Social"
+        self.title="TEA GameHub"
         self.personagem=PERSONAGENS[0]
 
         gerenciador=ScreenManager(transition=FadeTransition(duration=0.25))
