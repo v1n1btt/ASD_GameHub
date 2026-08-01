@@ -7,16 +7,22 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
-from telas.leitura_social.cenarios import PERSONAGENS
+from telas.leitura_social.cenarios import PERSONAGENS, CENARIOS
 from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_IDEAL, COR_OK
 from widgets_util import cartao_arredondado, fundo_de_tela
 from componentes import BotaoPersonagem
 
+import random
+
+QUANTIDADE_CENARIOS_POR_PARTIDA = 10
 
 class TelaSelecao(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.cartoes = []
+        self.indice_cenario=0
+        self.pontuacao_ideal=0
+        self.cenarios_da_partida = []
 
         raiz = FloatLayout()
         fundo_de_tela(raiz)
@@ -85,9 +91,13 @@ class TelaSelecao(Screen):
         self.botao_confirmar.disabled = False #permite apertar o botao de confirmar
         self.botao_confirmar.opacity = 1
 
+    def reiniciar_jogo(self):
+        self.indice_cenario=0
+        self.pontuacao_ideal=0
+        self.cenarios_da_partida = random.sample(CENARIOS,min(QUANTIDADE_CENARIOS_POR_PARTIDA,len(CENARIOS))) #isso aleatoriza os cenários levados ao user
+
     def confirmar(self, *args):
-        app = App.get_running_app()
-        app.reiniciar_jogo()
+        self.reiniciar_jogo()
         self.manager.current = "cenario"
 
     def voltar_ao_menu_principal(self, *args):
