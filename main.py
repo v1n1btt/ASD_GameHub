@@ -1,4 +1,8 @@
 import os
+
+from telas.memoria_emocional.fim_memoria import TelaFimMemoria
+from telas.memoria_emocional.jogo_memoria import TelaJogoMemoria
+from telas.memoria_emocional.menu import TelaMenuMemoria
 os.environ.setdefault("KIVY_NO_ARGS","1")
 
 from kivy.app import App
@@ -6,11 +10,11 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, FadeTransition
 from kivy.utils import platform
 
-from cenarios import CENARIOS, PERSONAGENS, REACOES_IMG
 from telas.menu_principal import TelaMenuPrincipal
-from telas.menu import TelaMenu
-from telas.selecao import TelaSelecao
-from telas.cenario import TelaCenario
+from telas.leitura_social.cenarios import CENARIOS, PERSONAGENS, REACOES_IMG
+from telas.leitura_social.menu import TelaMenu
+from telas.leitura_social.selecao import TelaSelecao
+from telas.leitura_social.cenario import TelaCenario
 from telas.fim import TelaFim
 from telas.outro_jogo import TelaOUTROGAME
 import random
@@ -33,10 +37,18 @@ class LeituraSocialApp(App):
 
         gerenciador=ScreenManager(transition=FadeTransition(duration=0.25))
         gerenciador.add_widget(TelaMenuPrincipal(name="menu_principal"))
+
+        # Leitura Social
         gerenciador.add_widget(TelaMenu(name="menu"))
         gerenciador.add_widget(TelaSelecao(name="selecao"))
         gerenciador.add_widget(TelaCenario(name="cenario"))
         gerenciador.add_widget(TelaFim(name="fim"))
+
+        # Memória Emocional
+        gerenciador.add_widget(TelaMenuMemoria(name="menu_memoria"))
+        gerenciador.add_widget(TelaJogoMemoria(name="jogo_memoria"))
+        gerenciador.add_widget(TelaFimMemoria(name="fim_memoria"))
+
         gerenciador.add_widget(TelaOUTROGAME(
             "jogo 2",
             "game 2",

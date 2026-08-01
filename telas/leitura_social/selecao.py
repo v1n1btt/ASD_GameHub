@@ -7,7 +7,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
-from cenarios import PERSONAGENS
+from telas.leitura_social.cenarios import PERSONAGENS
 from cores import COR_FUNDO_CARTAO, COR_TITULO, COR_IDEAL, COR_OK
 from widgets_util import cartao_arredondado, fundo_de_tela
 from componentes import BotaoPersonagem

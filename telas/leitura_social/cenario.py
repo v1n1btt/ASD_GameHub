@@ -7,9 +7,9 @@ from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
-from cenarios import CENARIOS, REACOES_IMG
-from cores import COR_FUNDO_CARTAO, COR_TEXTO, COR_DESTAQUE, COR_BOTAO
-from widgets_util import cartao_arredondado, recolorir_cartao, fundo_de_tela
+from cores import COR_BOTAO, COR_DESTAQUE, COR_FUNDO_CARTAO, COR_TEXTO
+from telas.leitura_social.cenarios import CENARIOS, REACOES_IMG
+from widgets_util import cartao_arredondado, fundo_de_tela, recolorir_cartao
 
 class TelaCenario(Screen):
     def __init__(self, **kwargs):
